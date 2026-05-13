@@ -8,6 +8,8 @@ release/
 npm-debug.log*
 
 assets/*.heic
+assets/*.mov
+assets/*.MOV
 packages/*.deskpet.json
 *.deskpet.json
 ares-head-turn.json
