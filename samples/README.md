@@ -2,9 +2,9 @@
 
 Put small sample green-screen cat videos here.
 
-Recommended names:
+Current examples:
 
-- `cat-sit-green-screen.mp4`
-- `cat-look-green-screen.mp4`
+- `cat_Ares.MOV`
+- `cat_Zobo.MOV`
 
 Keep samples short and compressed. For larger files, prefer Git LFS or attach them to a GitHub Release.

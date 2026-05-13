@@ -152,6 +152,40 @@ The packaged app can run without ffmpeg, but frame extraction may fall back to b
 
 Saved packages are written to `packages/` by default. This folder is ignored by Git because package files can become large.
 
+## Example Green-Screen Videos
+
+Example source videos are available in `samples/`:
+
+- [`samples/cat_Ares.MOV`](samples/cat_Ares.MOV)
+- [`samples/cat_Zobo.MOV`](samples/cat_Zobo.MOV)
+
+For best results, record source clips with:
+
+- a clean, uncluttered background before editing;
+- a stable camera angle and minimal handheld shake;
+- the full subject visible inside the frame for the whole clip;
+- short loop-friendly motion, ideally around 3-8 seconds.
+
+The example green-screen clips were prepared with CapCut before being imported into DeskPet.
+
+## CapCut Green-Screen Preparation
+
+The rough workflow is:
+
+1. Import a short cat video into CapCut.
+2. Cut out the subject with CapCut's background removal tools.
+3. Place the cut-out subject over a pure green background.
+4. Export a short green-screen video.
+5. Import that green-screen video into DeskPet.
+
+Step screenshots:
+
+| 1 | 2 | 3 | 4 |
+|---|---|---|---|
+| <img src="assets/1.png" width="190" alt="CapCut step 1"> | <img src="assets/2.png" width="190" alt="CapCut step 2"> | <img src="assets/3.png" width="190" alt="CapCut step 3"> | <img src="assets/4.png" width="190" alt="CapCut step 4"> |
+| 5 | 6 | 7 | 8 |
+| <img src="assets/5.png" width="190" alt="CapCut step 5"> | <img src="assets/6.png" width="190" alt="CapCut step 6"> | <img src="assets/7.png" width="190" alt="CapCut step 7"> | <img src="assets/8.png" width="190" alt="CapCut step 8"> |
+
 ## Demo Assets
 
 Use these folders for shareable media:
