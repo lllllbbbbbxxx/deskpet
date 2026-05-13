@@ -41,13 +41,7 @@ Requirements:
 - Node.js and npm.
 - Electron.
 - ffmpeg and ffprobe.
-- Optional: Python + OpenCV for body-point tracking.
-
-The project was developed with Electron available inside a conda environment at:
-
-```bash
-/opt/miniconda3/envs/hello_agent
-```
+- Optional: Python + OpenCV for body-point tracking and alignment.
 
 The app automatically looks for ffmpeg/ffprobe in environment variables, a bundled `bin/` folder, and common system locations.
 
@@ -56,7 +50,7 @@ Environment variables:
 ```bash
 FFMPEG_PATH=/path/to/ffmpeg
 FFPROBE_PATH=/path/to/ffprobe
-CONDA_PATH=/path/to/conda
+PYTHON_PATH=/path/to/python
 ```
 
 Common macOS paths:
@@ -81,13 +75,9 @@ Install dependencies:
 npm install
 ```
 
-If you want OpenCV tracking, install OpenCV in the Python environment used by `electron-main.js`:
+OpenCV is only used by the optional **Track Body Point** feature for stabilizing/alignment. It is not required for the desktop pet or mouse-follow effect.
 
-```bash
-conda install -n hello_agent opencv
-```
-
-or:
+If you want OpenCV tracking, install it in the Python environment used to run the app:
 
 ```bash
 pip install opencv-python
@@ -105,19 +95,7 @@ On macOS, you can also double-click:
 Launch DeskPet.command
 ```
 
-The launcher uses the local Electron install when available. If Electron is not installed locally, it tries the development conda environment path used by this project, then falls back to `npm install && npm run app`.
-
-If Electron is installed in the `hello_agent` conda environment:
-
-```bash
-env -u ELECTRON_RUN_AS_NODE /opt/miniconda3/envs/hello_agent/bin/electron /path/to/deskpet
-```
-
-For this local workspace:
-
-```bash
-env -u ELECTRON_RUN_AS_NODE /opt/miniconda3/envs/hello_agent/bin/electron /Users/xjz/Projects/deskpet
-```
+The launcher uses the local Electron install when available. If Electron is not installed locally, it falls back to `npm install && npm run app`.
 
 ## Package Installers
 
@@ -174,6 +152,27 @@ The packaged app can run without ffmpeg, but frame extraction may fall back to b
 
 Saved packages are written to `packages/` by default. This folder is ignored by Git because package files can become large.
 
+## Demo Assets
+
+Use these folders for shareable media:
+
+```text
+assets/      README screenshots, GIFs, and demo recordings
+samples/     Small green-screen source videos people can try
+```
+
+Recommended file names:
+
+```text
+assets/demo.gif
+assets/screenshot-main.png
+assets/screenshot-pet.png
+samples/cat-sit-green-screen.mp4
+samples/cat-look-green-screen.mp4
+```
+
+Keep sample videos short and reasonably compressed. If the videos are large, use Git LFS or attach them to a GitHub Release instead of committing them directly.
+
 ## Project Structure
 
 ```text
@@ -186,6 +185,8 @@ Saved packages are written to `packages/` by default. This folder is ignored by 
 ├── pet.html               Desktop pet window
 ├── pet.js                 Pet animation, locking, resizing, mouse-follow behavior
 ├── pet.css                Desktop pet styles
+├── assets/                Optional screenshots, GIFs, and demo recordings
+├── samples/               Optional green-screen sample videos
 ├── unlock.html            Click-through unlock control window
 ├── unlock.js              Unlock control behavior
 ├── unlock.css             Unlock control styles

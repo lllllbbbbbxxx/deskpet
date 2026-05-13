@@ -4,11 +4,7 @@ const os = require("node:os");
 const { execFile } = require("node:child_process");
 
 function loadElectron() {
-  try {
-    return require("electron");
-  } catch (error) {
-    return require("/opt/miniconda3/envs/hello_agent/lib/node_modules/electron");
-  }
+  return require("electron");
 }
 
 const { app, BrowserWindow, ipcMain, Menu, nativeImage, screen, Tray } = loadElectron();
@@ -41,13 +37,11 @@ function getFfmpegCandidates(binaryName) {
   ].filter(Boolean);
 }
 
-function getCondaCandidates() {
+function getPythonCandidates() {
   return [
-    process.env.CONDA_PATH,
-    isWindows ? "C:\\ProgramData\\miniconda3\\Scripts\\conda.exe" : null,
-    isWindows ? path.join(os.homedir(), "miniconda3", "Scripts", "conda.exe") : null,
-    "/opt/miniconda3/bin/conda",
-    "/usr/local/bin/conda",
+    process.env.PYTHON_PATH,
+    isWindows ? "python.exe" : "python3",
+    "python",
   ].filter(Boolean);
 }
 
@@ -591,11 +585,6 @@ ipcMain.handle("pet:renamePackage", async (_event, payload) => {
 });
 
 ipcMain.handle("track:point", async (_event, payload) => {
-  const condaPath = await findFirstExistingPath(getCondaCandidates());
-  if (!condaPath) {
-    return { ok: false, error: "Conda was not found. OpenCV body-point tracking is unavailable." };
-  }
-
   const outputDir = await fs.mkdtemp(path.join(os.tmpdir(), "deskpet-track-"));
 
   try {
@@ -608,29 +597,44 @@ ipcMain.handle("track:point", async (_event, payload) => {
     );
 
     const scriptPath = path.join(__dirname, "scripts", "track_point.py");
-    const { stdout } = await new Promise((resolve, reject) => {
-      const child = execFile(
-        condaPath,
-        ["run", "-n", "hello_agent", "python", scriptPath],
-        { maxBuffer: 1024 * 1024 * 16 },
-        (error, stdout, stderr) => {
-          if (error) {
-            error.stderr = stderr;
-            reject(error);
-            return;
-          }
-          resolve({ stdout, stderr });
-        },
-      );
-
-      child.stdin.end(
-        JSON.stringify({
-          frames: framePaths,
-          startIndex: payload.startIndex,
-          point: payload.point,
-        }),
-      );
+    const input = JSON.stringify({
+      frames: framePaths,
+      startIndex: payload.startIndex,
+      point: payload.point,
     });
+    let stdout = "";
+    let lastError = null;
+
+    for (const pythonPath of getPythonCandidates()) {
+      try {
+        const result = await new Promise((resolve, reject) => {
+          const child = execFile(
+            pythonPath,
+            [scriptPath],
+            { maxBuffer: 1024 * 1024 * 16 },
+            (error, stdout, stderr) => {
+              if (error) {
+                error.stderr = stderr;
+                reject(error);
+                return;
+              }
+              resolve({ stdout, stderr });
+            },
+          );
+
+          child.stdin.end(input);
+        });
+        stdout = result.stdout;
+        lastError = null;
+        break;
+      } catch (error) {
+        lastError = error;
+      }
+    }
+
+    if (lastError) {
+      return { ok: false, error: "Python with OpenCV was not found. Body-point tracking is unavailable." };
+    }
 
     return { ok: true, ...JSON.parse(stdout) };
   } finally {
