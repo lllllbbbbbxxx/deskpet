@@ -1,0 +1,105 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+  user-select: none;
+}
+
+.pet-stage {
+  position: fixed;
+  inset: 0;
+  -webkit-app-region: drag;
+  background: transparent;
+}
+
+.pet-stage.is-locked {
+  -webkit-app-region: no-drag;
+}
+
+#desktopPetCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.close-button,
+.lock-button,
+.look-button,
+.size-button {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  height: 24px;
+  height: 24px;
+  border: 1px solid rgba(32, 35, 34, 0.18);
+  border-radius: 999px;
+  color: rgba(32, 35, 34, 0.72);
+  background: rgba(255, 255, 255, 0.76);
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.size-controls {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  gap: 6px;
+  -webkit-app-region: no-drag;
+}
+
+.size-button {
+  position: static;
+  width: 24px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.close-button {
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  border-radius: 50%;
+}
+
+.lock-button,
+.look-button {
+  left: 8px;
+  bottom: 8px;
+  padding: 0 10px;
+}
+
+.lock-button.is-positioned {
+  bottom: auto;
+}
+
+.look-button {
+  bottom: 40px;
+}
+
+.look-button.is-active {
+  color: #fff;
+  background: rgba(22, 114, 93, 0.88);
+}
+
+.pet-stage.is-locked .close-button,
+.pet-stage.is-locked .lock-button,
+.pet-stage.is-locked .look-button,
+.pet-stage.is-locked .size-controls {
+  display: none;
+}
+
+.close-button:hover,
+.lock-button:hover,
+.look-button:hover,
+.size-button:hover {
+  color: #202322;
+  background: rgba(255, 255, 255, 0.94);
+}

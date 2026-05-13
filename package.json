@@ -1,0 +1,73 @@
+{
+  "name": "deskpet-mvp",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Green-screen real cat desktop pet MVP.",
+  "author": "DeskPet Contributors",
+  "main": "electron-main.js",
+  "scripts": {
+    "app": "electron .",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:mac": "electron-builder --mac dmg",
+    "dist:win": "electron-builder --win nsis",
+    "check": "node --check electron-main.js && node --check preload.js && node --check script.js && node --check pet.js"
+  },
+  "build": {
+    "appId": "com.deskpet.mvp",
+    "productName": "DeskPet",
+    "asar": false,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "electron-main.js",
+      "preload.js",
+      "index.html",
+      "script.js",
+      "styles.css",
+      "pet.html",
+      "pet.js",
+      "pet.css",
+      "unlock.html",
+      "unlock.js",
+      "unlock.css",
+      "matting-api.md",
+      "scripts/**/*",
+      "bin/**/*",
+      "package.json",
+      "!scripts/__pycache__/**",
+      "!packages/**",
+      "!*.deskpet.json",
+      "!ares-head-turn.json"
+    ],
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  }
+}

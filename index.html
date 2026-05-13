@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeskPet MVP</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="Asset processing workspace">
+        <header class="topbar">
+          <div>
+            <h1>Real Cat Desktop Pet MVP</h1>
+            <p>Upload a green-screen cat video and turn it into a transparent desktop pet.</p>
+          </div>
+          <div class="actions">
+            <button id="processBtn" class="primary-action" type="button" disabled>Process Video</button>
+            <button id="launchPetBtn" class="secondary-action" type="button" disabled>Send to Desktop</button>
+          </div>
+        </header>
+
+        <div class="grid">
+          <section class="panel upload-panel" aria-labelledby="uploadTitle">
+            <div class="panel-heading">
+              <h2 id="uploadTitle">Source Asset</h2>
+              <span id="fileState" class="state-pill">No file</span>
+            </div>
+
+            <label id="dropZone" class="drop-zone" for="videoInput">
+              <input id="videoInput" type="file" accept="video/*" />
+              <span class="upload-icon" aria-hidden="true">+</span>
+              <strong>Upload a green-screen cat video</strong>
+              <small>Use a 3-8 second clip with the full cat visible, a pure green background, and minimal green spill.</small>
+            </label>
+
+            <div class="source-preview">
+              <video id="sourceVideo" controls muted playsinline></video>
+              <div id="sourceEmpty" class="empty-layer">The source video will appear here</div>
+            </div>
+          </section>
+
+          <section class="panel preview-panel" aria-labelledby="previewTitle">
+            <div class="panel-heading">
+              <h2 id="previewTitle">Processed Preview</h2>
+              <span id="processState" class="state-pill">Waiting for asset</span>
+            </div>
+
+            <div class="pet-preview">
+              <div id="screenEdge" class="screen-edge">
+                <canvas id="petCanvas" width="720" height="520"></canvas>
+                <div id="previewEmpty" class="empty-layer">The processed desktop pet animation will appear here</div>
+              </div>
+            </div>
+
+            <div class="compare-grid" aria-label="Frame comparison">
+              <figure>
+                <figcaption>Extracted Frame</figcaption>
+                <canvas id="rawCompareCanvas" width="360" height="220"></canvas>
+              </figure>
+              <figure>
+                <figcaption>After Green Screen Key</figcaption>
+                <canvas id="keyedCompareCanvas" width="360" height="220"></canvas>
+              </figure>
+            </div>
+
+            <div class="frame-editor" aria-label="Single-frame alignment editor">
+              <label>
+                Edit Frame
+                <input id="frameScrubber" type="range" min="0" max="0" value="0" disabled />
+              </label>
+              <div class="editor-actions">
+                <span id="frameEditState">Process a video to align frames and height</span>
+                <button id="trackPointBtn" class="mini-action" type="button" disabled>Track Body Point</button>
+                <button id="clearGroundLineBtn" class="mini-action" type="button" disabled>Clear Frame</button>
+              </div>
+            </div>
+
+            <section id="petAssetCard" class="asset-card is-hidden" aria-label="Processed asset card">
+              <canvas id="assetThumbCanvas" width="160" height="110"></canvas>
+              <div>
+                <h3>Cat Animation Package</h3>
+                <p id="assetMeta">Process a video to save or drag out the package</p>
+              </div>
+              <div class="asset-actions">
+                <button id="savePackageBtn" class="mini-action" type="button" disabled>Save Package</button>
+                <button id="launchPackageBtn" class="mini-action" type="button" disabled>Send to Desktop</button>
+              </div>
+            </section>
+
+            <section class="saved-packages" aria-label="Saved animation packages">
+              <div class="panel-heading">
+                <h2>Saved Packages</h2>
+                <span id="savedPackageState" class="state-pill">Scanning</span>
+              </div>
+              <div id="savedPackageList" class="package-list"></div>
+            </section>
+
+            <div class="controls" aria-label="Preview settings">
+              <label>
+                Pet Size
+                <input id="sizeRange" type="range" min="50" max="140" value="90" />
+              </label>
+              <label>
+                Playback Speed
+                <input id="speedRange" type="range" min="6" max="24" value="12" />
+              </label>
+              <label>
+                Green Tolerance
+                <input id="keyTolerance" type="range" min="18" max="90" value="42" />
+              </label>
+              <label>
+                Frame Exposure
+                <input id="colorMatchRange" type="range" min="60" max="160" value="100" />
+              </label>
+              <label>
+                Shadow Lift
+                <input id="shadowLiftRange" type="range" min="0" max="80" value="0" />
+              </label>
+              <label>
+                Keyframe Influence
+                <input id="keyframeRadiusRange" type="range" min="0" max="12" value="4" />
+              </label>
+              <label class="checkbox-row">
+                <input id="edgeMode" type="checkbox" checked />
+                Preview near screen edge
+              </label>
+              <label class="checkbox-row">
+                <input id="autoAlign" type="checkbox" />
+                Auto-align body anchor (experimental)
+              </label>
+              <label class="checkbox-row">
+                <input id="pingPongLoop" type="checkbox" checked />
+                Ping-pong loop
+              </label>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

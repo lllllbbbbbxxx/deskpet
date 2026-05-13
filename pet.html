@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeskPet</title>
+    <link rel="stylesheet" href="./pet.css" />
+  </head>
+  <body>
+    <main id="petStage" class="pet-stage">
+      <canvas id="desktopPetCanvas" width="840" height="640"></canvas>
+      <div class="size-controls" aria-label="Resize desktop pet">
+        <button id="shrinkPetBtn" class="size-button" type="button" title="Shrink">-</button>
+        <button id="growPetBtn" class="size-button" type="button" title="Grow">+</button>
+      </div>
+      <button id="lookPetBtn" class="look-button" type="button" title="Follow mouse">Look</button>
+      <button id="lockPetBtn" class="lock-button" type="button" title="Lock">Lock</button>
+      <button id="closePetBtn" class="close-button" type="button" title="Close">x</button>
+    </main>
+    <script src="./pet.js"></script>
+  </body>
+</html>
