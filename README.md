@@ -2,13 +2,9 @@
 
 DeskPet turns a real green-screen cat video into a transparent desktop pet. It is an Electron MVP for creating, saving, and launching small animated cat companions on your desktop.
 
-![DeskPet demo](assets/demo.gif)
+![DeskPet demo](./assets/demo.gif?raw=true)
 
 > Important: this MVP works best with green-screen cat videos. If you only have a normal cat video, prepare it in CapCut first, then upload the green-screen version to DeskPet.
-
-## Why I Built This
-
-Many pet owners miss their cats while studying or working. DeskPet turns real cat videos into a small desktop companion, so your own cat can stay with you on screen.
 
 ## Features
 
@@ -227,9 +223,9 @@ Step screenshots:
 
 | 1 | 2 | 3 | 4 |
 |---|---|---|---|
-| <img src="assets/1.png" width="190" alt="CapCut step 1"> | <img src="assets/2.png" width="190" alt="CapCut step 2"> | <img src="assets/3.png" width="190" alt="CapCut step 3"> | <img src="assets/4.png" width="190" alt="CapCut step 4"> |
+| <img src="./assets/1.png?raw=true" width="190" alt="CapCut step 1"> | <img src="./assets/2.png?raw=true" width="190" alt="CapCut step 2"> | <img src="./assets/3.png?raw=true" width="190" alt="CapCut step 3"> | <img src="./assets/4.png?raw=true" width="190" alt="CapCut step 4"> |
 | 5 | 6 | 7 | 8 |
-| <img src="assets/5.png" width="190" alt="CapCut step 5"> | <img src="assets/6.png" width="190" alt="CapCut step 6"> | <img src="assets/7.png" width="190" alt="CapCut step 7"> | <img src="assets/8.png" width="190" alt="CapCut step 8"> |
+| <img src="./assets/5.png?raw=true" width="190" alt="CapCut step 5"> | <img src="./assets/6.png?raw=true" width="190" alt="CapCut step 6"> | <img src="./assets/7.png?raw=true" width="190" alt="CapCut step 7"> | <img src="./assets/8.png?raw=true" width="190" alt="CapCut step 8"> |
 
 ## Example Green-Screen Videos
 
