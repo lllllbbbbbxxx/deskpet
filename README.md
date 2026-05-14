@@ -2,7 +2,7 @@
 
 DeskPet turns a real green-screen cat video into a transparent desktop pet. It is an Electron MVP for creating, saving, and launching small animated cat companions on your desktop.
 
-![DeskPet demo](./assets/demo.gif?raw=true)
+![DeskPet demo](https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/demo.gif)
 
 > Important: this MVP works best with green-screen cat videos. If you only have a normal cat video, prepare it in CapCut first, then upload the green-screen version to DeskPet.
 
@@ -29,8 +29,8 @@ This is the recommended path for regular users.
 
 1. Open the GitHub Releases page for this project.
 2. Download the installer for your platform:
-   - macOS Apple Silicon: `DeskPet-0.1.0-arm64.dmg`
-   - Windows: `DeskPet Setup 0.1.0.exe`, if a Windows build is attached to the release
+   - macOS Apple Silicon: `DeskPet-0.1.1-arm64.dmg`
+   - Windows: `DeskPet Setup 0.1.1.exe`
 3. Install and open DeskPet.
 
 On macOS, the app is currently unsigned. If macOS blocks the first launch, open **System Settings -> Privacy & Security**, find DeskPet, and click **Open Anyway**.
@@ -223,9 +223,9 @@ Step screenshots:
 
 | 1 | 2 | 3 | 4 |
 |---|---|---|---|
-| <img src="./assets/1.png?raw=true" width="190" alt="CapCut step 1"> | <img src="./assets/2.png?raw=true" width="190" alt="CapCut step 2"> | <img src="./assets/3.png?raw=true" width="190" alt="CapCut step 3"> | <img src="./assets/4.png?raw=true" width="190" alt="CapCut step 4"> |
+| <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/1.png" width="190" alt="CapCut step 1"> | <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/2.png" width="190" alt="CapCut step 2"> | <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/3.png" width="190" alt="CapCut step 3"> | <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/4.png" width="190" alt="CapCut step 4"> |
 | 5 | 6 | 7 | 8 |
-| <img src="./assets/5.png?raw=true" width="190" alt="CapCut step 5"> | <img src="./assets/6.png?raw=true" width="190" alt="CapCut step 6"> | <img src="./assets/7.png?raw=true" width="190" alt="CapCut step 7"> | <img src="./assets/8.png?raw=true" width="190" alt="CapCut step 8"> |
+| <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/5.png" width="190" alt="CapCut step 5"> | <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/6.png" width="190" alt="CapCut step 6"> | <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/7.png" width="190" alt="CapCut step 7"> | <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/8.png" width="190" alt="CapCut step 8"> |
 
 ## Example Green-Screen Videos
 
