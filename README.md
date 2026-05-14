@@ -1,3 +1,4 @@
+<img width="900" height="416" alt="demo" src="https://github.com/user-attachments/assets/2e3e3ef0-ed4c-4621-9f0f-5479004f9171" />
 # DeskPet MVP
 
 DeskPet turns a real green-screen cat video into a transparent desktop pet. It is an Electron MVP for creating, saving, and launching small animated cat companions on your desktop.
