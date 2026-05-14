@@ -1,9 +1,8 @@
-<img width="900" height="416" alt="demo" src="https://github.com/user-attachments/assets/2e3e3ef0-ed4c-4621-9f0f-5479004f9171" />
 # DeskPet MVP
 
 DeskPet turns a real green-screen cat video into a transparent desktop pet. It is an Electron MVP for creating, saving, and launching small animated cat companions on your desktop.
 
-![DeskPet demo](https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/demo.gif)
+<img width="900" height="416" alt="demo" src="https://github.com/user-attachments/assets/2e3e3ef0-ed4c-4621-9f0f-5479004f9171" />
 
 > Important: this MVP works best with green-screen cat videos. If you only have a normal cat video, prepare it in CapCut first, then upload the green-screen version to DeskPet.
 
@@ -224,12 +223,19 @@ Step screenshots:
 
 | 1 | 2 | 3 | 4 |
 |---|---|---|---|
-| <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/1.png" width="190" alt="CapCut step 1"> | <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/2.png" width="190" alt="CapCut step 2"> | <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/3.png" width="190" alt="CapCut step 3"> | <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/4.png" width="190" alt="CapCut step 4"> |
+| <img width="1179" height="2556" alt="1" src="https://github.com/user-attachments/assets/8f755294-fd59-4365-87e0-58905e988877" />
+ | <img width="1179" height="2556" alt="2" src="https://github.com/user-attachments/assets/623cce97-991c-45d8-8f32-f6d9309bf908" />
+ | <img width="1179" height="2556" alt="3" src="https://github.com/user-attachments/assets/7978de50-680d-495b-bde7-61505c446134" />
+ | <img width="590" height="1278" alt="4" src="https://github.com/user-attachments/assets/aa473f0d-f4a1-4d6d-a097-19d5111d4402" />
+ |
 | 5 | 6 | 7 | 8 |
-| <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/5.png" width="190" alt="CapCut step 5"> | <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/6.png" width="190" alt="CapCut step 6"> | <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/7.png" width="190" alt="CapCut step 7"> | <img src="https://raw.githubusercontent.com/lllllbbbbbxxx/deskpet/main/assets/8.png" width="190" alt="CapCut step 8"> |
+| <img width="1179" height="2556" alt="5" src="https://github.com/user-attachments/assets/8b563aef-45fa-44ac-bc56-c70ac476ca78" />
+| <img width="1179" height="2556" alt="6" src="https://github.com/user-attachments/assets/db845fc3-3499-4f7a-93eb-59f190dc084d" />
+ | <img width="590" height="1278" alt="7" src="https://github.com/user-attachments/assets/023a4c00-67c4-47a9-90a9-a5ef361ca557" />
+ | <img width="1179" height="2556" alt="8" src="https://github.com/user-attachments/assets/21c5e311-d2ef-4f9d-a90d-3dac7791679a" />
+|
 
 ## Example Green-Screen Videos
-
 Example source videos are available in `samples/`:
 
 - [`samples/cat_Ares.MOV`](samples/cat_Ares.MOV)
