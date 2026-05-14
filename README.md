@@ -5,6 +5,7 @@ DeskPet turns a real green-screen cat video into a transparent desktop pet. It i
 <img width="900" height="416" alt="demo" src="https://github.com/user-attachments/assets/2e3e3ef0-ed4c-4621-9f0f-5479004f9171" />
 
 > Important: this MVP works best with green-screen cat videos. If you only have a normal cat video, prepare it in CapCut first, then upload the green-screen version to DeskPet.
+> Windows support is experimental and may behave differently from macOS.
 
 ## Features
 
